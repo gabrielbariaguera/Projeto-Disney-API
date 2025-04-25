@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto API</title>
+
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+</head>
+
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Projeto API - Disney</h1>
+    <div class="text-center mb-4">
+      <button type="button" class="btn btn-danger" id="generateBtn">Gerar personagens</button>
+    </div>
+
+    <div class="mb-4">
+      <label for="characterInput" class="form-label">Buscar personagem:</label>
+      <div class="input-group">
+        <input type="text" id="characterInput" placeholder="Digite o nome do personagem" class="form-control" />
+        <button id="searchBtn" class="btn btn-primary">Buscar</button>
+      </div>
+    </div>
+
+    <div id="feedback" class="alert d-none" role="alert"></div>
+
+    <div id="characterList" class="d-flex flex-wrap gap-3 justify-content-center mb-4"></div>
+
+    <div class="d-flex justify-content-between">
+      <button id="prevBtn" class="btn btn-outline-secondary">Anterior</button>
+      <button id="nextBtn" class="btn btn-outline-secondary">Próximo</button>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
