@@ -17,15 +17,17 @@ export async function getCharacters() {
     const totalPages = json.info.totalPages;
 
     //Busca o resto das páginas (2 em diante)
-    try {
-      const res = await fetch(`${url}?page=${page}`);
-      const data = await res.json();
-      if (Array.isArray(data.data)) {
-        allCharacters.push(...data.data);//Junta no array
+    for (let page = 2; page <= totalPages; page++) {
+      try {
+        const res = await fetch(`${url}?page=${page}`);
+        const data = await res.json();
+        if (Array.isArray(data.data)) {
+          allCharacters.push(...data.data);//Junta no array
+        }
+      } catch (error) {
+       console.warn(`Erro ao carregar página ${page}:`, error.message);
       }
-    } catch (error) {
-      console.warn(`Erro ao carregar página ${page}:`, error.message);
-    }
+    }  
 
     return allCharacters;
 
